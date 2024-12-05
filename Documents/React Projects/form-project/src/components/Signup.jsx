@@ -1,16 +1,14 @@
 export default function Signup() {
-function handleSubmit(event){
-  event.preventDefault();
-  const fd = new FormData(event.target);
-  // const enteredEmail = fd.get("email");
-  const acquisitionChannel = fd.getAll("acquisition");
-  const data = Object.fromEntries(fd.entries());
-  data.acquisition = acquisitionChannel;
-  console.log(data);
-  // console.log(acquisionChannel);
-
-
-}
+  function handleSubmit(event) {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    // const enteredEmail = fd.get("email");
+    const acquisitionChannel = fd.getAll("acquisition"); // used seperately because it contains three elements that have the same name
+    const data = Object.fromEntries(fd.entries());
+    data.acquisition = acquisitionChannel;
+    console.log(data);
+    event.target.reset();
+  }
   return (
     <form onSubmit={handleSubmit}>
       <h2>Welcome on board!</h2>

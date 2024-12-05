@@ -19,6 +19,10 @@ export default function Login() {
     //console.log("Entered Identifier: ", enteredValues.identifier);
     //console.log("Entered Password: ", enteredValues.password);
     console.log(enteredValues);
+    setEnteredValues({
+      identifier: "",
+      password: "",
+    });
   }
   return (
     <>
@@ -32,7 +36,9 @@ export default function Login() {
               id="identifier"
               type="identifier"
               name="identifier"
-              onChange={(event) => handleInputChange("identifier", event.target.value)}
+              onChange={(event) =>
+                handleInputChange("identifier", event.target.value)
+              }
               value={enteredValues.identifier}
             />
           </div>
@@ -43,7 +49,9 @@ export default function Login() {
               id="password"
               type="password"
               name="password"
-              onChange={(event) => handleInputChange("password", event.target.value)}
+              onChange={(event) =>
+                handleInputChange("password", event.target.value)
+              }
               value={enteredValues.password}
             />
           </div>
