@@ -6,10 +6,10 @@ export default function Login() {
     password: "",
   });
 
-  function handleInputChange(element, event) {
+  function handleInputChange(element, value) {
     setEnteredValues((prevValues) => ({
       ...prevValues,
-      [element]: event.target.value,
+      [element]: value,
     }));
   }
 
@@ -32,7 +32,7 @@ export default function Login() {
               id="identifier"
               type="identifier"
               name="identifier"
-              onChange={(event) => handleInputChange("identifier", event)}
+              onChange={(event) => handleInputChange("identifier", event.target.value)}
               value={enteredValues.identifier}
             />
           </div>
@@ -43,7 +43,7 @@ export default function Login() {
               id="password"
               type="password"
               name="password"
-              onChange={(event) => handleInputChange("password", event)}
+              onChange={(event) => handleInputChange("password", event.target.value)}
               value={enteredValues.password}
             />
           </div>
